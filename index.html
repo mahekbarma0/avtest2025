@@ -141,96 +141,99 @@
     /* ---------------- Mobile ---------------- */
     .mobile-menu-icon{display:none;}
 
-    @media (max-width:600px) {
-  body { overflow:auto; }
-  header { padding:15px 20px; }
-  nav { display:none; }
-  .mobile-menu-icon {
-    display:flex;
-    flex-direction:column;
-    width:30px;
-    gap:6px;
-    cursor:pointer;
-  }
-  .mobile-menu-icon span {
-    height:4px;
-    background:#333;
-    border-radius:5px;
-  }
+    @media(max-width:600px){
+        body{overflow:auto;}
+        header{padding:15px 20px;}
 
-  /* Hero stays full mobile screen height so its content is never covered */
-  .hero{
-    padding:90px 20px 40px; /* reduce bottom padding for compactness on mobile */
-    min-height:100vh;      /* keep the yellow area full-height so hero content is visible */
-    box-shadow:inset 0 0 80px rgba(0,0,0,0.15);
-    text-align:center;
-  }
-  .hero h1{font-size:32px;}
+        nav{display:none;} /* hides desktop menu */
 
-  /* Make call-box flow after the hero (no absolute positioning) so it won't overlap */
-  .call-box{
-    position:static;       /* switch from absolute to static on mobile */
-    transform:none;
-    top:auto;
-    left:auto;
-    width:92%;
-    max-width:720px;
-    margin:18px auto;      /* place it below the hero */
-    padding:20px;
-    border-radius:18px;
-    box-shadow:0 14px 36px rgba(0,0,0,0.09);
-    text-align:center;
-  }
+        .mobile-menu-icon{
+            display:flex;
+            flex-direction:column;
+            width:30px;
+            gap:6px;
+            cursor:pointer;
+        }
+        .mobile-menu-icon span{
+            height:4px;
+            background:#333;
+            border-radius:5px;
+        }
 
-  /* Keep the phone number on one line */
-  .number{ 
-    font-size:26px;
-    white-space:nowrap;
-    overflow:visible;
-  }
+        /* Hero stays full mobile screen height so its content is never covered */
+        .hero{
+            /* keep hero visually similar but make it flow naturally on mobile */
+            position:relative;       /* allow normal document flow on mobile */
+            padding:90px 20px 40px; /* reduce bottom padding for compactness on mobile */
+            min-height:100vh;      /* keep the yellow area full-height so hero content is visible */
+            box-shadow:inset 0 0 80px rgba(0,0,0,0.15);
+            text-align:center;
+        }
+        .hero h1{font-size:32px;}
 
-  /* Action buttons: force a single row, keep text from wrapping */
-  .action-buttons{
-    margin-top:16px;
-    display:flex;
-    gap:12px;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:nowrap; /* no wrapping -> both buttons stay in one row */
-  }
+        /* Make call-box flow after the hero (no absolute positioning) so it won't overlap */
+        .call-box{
+            position:static;       /* switch from absolute to static on mobile */
+            transform:none;
+            top:auto;
+            left:auto;
+            width:92%;
+            max-width:720px;
+            margin:18px auto;      /* place it below the hero */
+            padding:20px;
+            border-radius:18px;
+            box-shadow:0 14px 36px rgba(0,0,0,0.09);
+            text-align:center;
+        }
 
-  /* Buttons shrink a little and share the space */
-  .glow-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding:10px 12px;
-    border-radius:40px;
-    font-size:15px;
-    font-weight:700;
-    white-space:nowrap;    /* prevents the emoji + label from breaking */
-    flex:1 1 48%;          /* each button takes roughly half the row */
-    max-width:48%;
-    box-shadow:
-      0 0 10px rgba(255,156,42,0.55),
-      0 0 20px rgba(255,156,42,0.35),
-      inset 0 0 8px rgba(255,255,255,0.35);
-  }
+        /* Keep the phone number on one line */
+        .number{ 
+            font-size:26px;
+            white-space:nowrap;
+            overflow:visible;
+        }
 
-  /* Slightly reduce text size inside call box paragraphs for better fit */
-  .call-box p{ font-size:14px; line-height:1.35; }
+        /* Action buttons: force a single row, keep text from wrapping */
+        .action-buttons{
+            margin-top:16px;
+            display:flex;
+            gap:12px;
+            justify-content:center;
+            align-items:center;
+            flex-wrap:nowrap; /* no wrapping -> both buttons stay in one row */
+        }
 
-  /* Hide bottom cards on mobile (keeps page clean) */
-  .sections{ display:none; }
+        /* Buttons shrink a little and share the space */
+        .glow-btn{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:8px;
+            padding:10px 12px;
+            border-radius:40px;
+            font-size:15px;
+            font-weight:700;
+            white-space:nowrap;    /* prevents the emoji + label from breaking */
+            flex:1 1 48%;          /* each button takes roughly half the row */
+            max-width:48%;
+            box-shadow:
+              0 0 10px rgba(255,156,42,0.55),
+              0 0 20px rgba(255,156,42,0.35),
+              inset 0 0 8px rgba(255,255,255,0.35);
+        }
 
-  /* small tweak so header logo doesn't crowd */
-  .brand img{ height:34px; }
+        /* Slightly reduce text size inside call box paragraphs for better fit */
+        .call-box p{ font-size:14px; line-height:1.35; }
 
-  /* ensure overall spacing is comfortable on small screens */
-  .hero .sub{ max-width:92%; margin:18px auto; font-size:15px; }
-}
+        /* Hide bottom sections on mobile (keeps page clean) */
+        .sections{ display:none; }
 
+        /* small tweak so header logo doesn't crowd */
+        .brand img{ height:34px; }
+
+        /* ensure overall spacing is comfortable on small screens */
+        .hero .sub{ max-width:92%; margin:18px auto; font-size:15px; }
+    }
   </style>
 </head>
 
